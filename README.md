@@ -1,6 +1,8 @@
 near-blank-project
 ==================
 
+Proof: https://stats.gallery/testnet/dev-1667512838799-90657431150835/contract?t=week  
+
 This app was initialized with [create-near-app]
 
 1. run npm deploy 

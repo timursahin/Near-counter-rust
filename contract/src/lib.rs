@@ -1,24 +1,27 @@
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
-use near_sdk::{log, near_bindgen};
- 
+use near_sdk::{log, env, near_bindgen};
+
 #[near_bindgen]
-#[derive(BorshDeserialize, BorshSerialize)]
-pub struct Counter {    counter: i128     }
-
-impl Default for Counter {
-    fn default() -> Self {
-        Self { counter: 3 }
-    }
-}
-
+#[derive(Default, BorshDeserialize, BorshSerialize)]
+pub struct Counter {
+    val: u32,
+    
+}   
+    
 #[near_bindgen]
 impl Counter {
-    pub fn get_counter(&self) -> i128 {
-        return self.counter.clone();
+    
+    // Public read-only method: Returns the counter value.
+    pub fn get_num(&self) -> u32 {
+        return self.val;
     }
-
-    pub fn set_counter(&mut self, new_counter: i128) {
-        log!("Saving new counter {} ", new_counter);
-        self.counter = new_counter;
+    pub fn resetnumber(&mut self) {
+        self.val = 0;
+        log!("Reset counter to zero");
+    }
+  
+pub fn NewNumber(&mut self, number: u32)   {
+        self.val = number;
+        env::log_str(&format!("this is new number {}", (self.val)));
     }
 }
