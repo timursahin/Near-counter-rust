@@ -3,6 +3,22 @@ near-blank-project
 
 This app was initialized with [create-near-app]
 
+1. run npm deploy 
+
+2. and then sellect dev-xxxxxxxxxxxx-xxxxxxxxxxxx
+
+3. near view dev-xxxxxxxxxxxx-xxxxxxxxxxxx get_counter 
+
+you will see counter is 3
+
+if you change counter number from terminal enter  bellow:
+
+near call dev-xxxxxxxxxxxx-xxxxxxxxxxxx set_counter '{"new_counter”:43}’ --accountId dev-xxxxxxxxxxxx-xxxxxxxxxxxx
+
+and for see result ,
+
+near view dev-xxxxxxxxxxxx-xxxxxxxxxxxx get_counter 
+
 
 Quick Start
 ===========
